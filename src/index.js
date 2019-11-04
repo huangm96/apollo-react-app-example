@@ -1,6 +1,5 @@
-import React from "react";
-import { render } from "react-dom";
-
+import React from 'react';
+import ReactDOM from 'react-dom';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider, useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
@@ -32,12 +31,16 @@ function ExchangeRates() {
 }
 
 const App = () => (
-  <ApolloProvider client={client}>
+  
     <div>
       <h2>My first Apollo app 🚀</h2>
       <ExchangeRates />
     </div>
-  </ApolloProvider>
+  
 );
 
-render(<App />, document.getElementById("root"));
+
+
+  
+ReactDOM.render(<ApolloProvider client={client}><App /></ApolloProvider>, document.getElementById('root'));
+
